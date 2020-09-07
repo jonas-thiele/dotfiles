@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 function sync() {
-    rsync --exclude ".git/" --exclude "*sync.sh*" -avh --no-perms ~/dotfiles/ ~
-    source ~/.bash_profile
+    rsync --exclude ".git/" --exclude "sync.sh" --exclude "*.swp" --exclude "*.swo" -avh --no-perms ~/dotfiles/ ~
+    source ~/.bashrc
 }
 
 echo "Pulling dotfiles repository"
