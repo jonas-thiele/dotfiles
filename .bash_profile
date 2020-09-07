@@ -1,4 +1,4 @@
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$HOME/uni/uc4/fabric-ca/bin
+# Extend the $PATH here
+source ./.path
+# Set vim as default editor
 export EDITOR=vim

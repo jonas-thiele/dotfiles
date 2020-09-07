@@ -1,0 +1,21 @@
+#!/bin/bash
+# vim: filetype=sh
+
+# Easier navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ~='cd ~'
+
+# Shortcuts for common commands
+alias q='exit'
+alias c='clear'
+alias h='history'
+alias ll='ls -alFh'
+alias l='ls -lFh'
+
+# Git
+alias g='git'
+alias st='git status'
+alias com='git commit -m'
