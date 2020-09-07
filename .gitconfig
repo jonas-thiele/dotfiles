@@ -1,3 +1,5 @@
 [user]
 	email = JonasThi97@gmail.com
 	name = Jonas Thiele
+[core]
+	excludesfile = /home/jonas/.gitignore_global
