@@ -5,6 +5,8 @@ function sync() {
     source ~/.bash_profile
 }
 
+echo "Pulling dotfiles repository"
+git -C ~/dotfiles/ pull origin master
 
 read -p "This will overwrite existing dotfiles. Continue? (y/n)" -n 1
 echo ""
