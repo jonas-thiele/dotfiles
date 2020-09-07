@@ -19,3 +19,6 @@ alias l='ls -lFh'
 alias g='git'
 alias st='git status'
 alias com='git commit -m'
+
+# Print each PATH entry on a different line
+alias path='echo -e ${PATH//:/\\n}'
