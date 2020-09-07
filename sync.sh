@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function sync() {
-    rsync --exclude ".git/" --exclude "sync.sh" -avh --no-perms ~/dotfiles/ ~
+    rsync --exclude ".git/" --exclude "*sync.sh*" -avh --no-perms ~/dotfiles/ ~
     source ~/.bash_profile
 }
 
