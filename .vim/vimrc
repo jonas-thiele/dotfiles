@@ -1,0 +1,202 @@
+""""""""""""""""""""
+" Behaviour
+""""""""""""""""""""
+
+" Turn off vi compatibility mode
+set nocompatible
+
+" Disable the default Vim startup message
+set shortmess+=I
+
+" Always show the status line at the bottom, even if you only have one window open
+set laststatus=2
+
+" Makes backspace more intuitive in insertion mode
+set backspace=indent,eol,start
+
+" Allow hidden buffers that are not shown in a window
+set hidden
+
+" Disable audible bell because it's annoying
+set noerrorbells visualbell t_vb=
+
+" Enable mouse support
+set mouse+=a
+
+" Remember more things
+set history=1000
+set undolevels=1000
+
+" Show file name in terminal title
+set title
+
+" Stop some movements from always going to the first character of a line
+set nostartofline
+
+" 'Save file?' dialogue when exiting unsaved file
+set confirm
+
+" Automatically reload modified files
+set autoread
+
+
+
+""""""""""""""""""""
+" Look and Feel 
+""""""""""""""""""""
+
+" Color scheme
+set background=dark
+colorscheme solarized
+
+" Turn on syntax highlighting
+syntax on
+
+" Highlight the 81st column
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
+
+
+
+""""""""""""""""""""
+" Commands 
+""""""""""""""""""""
+
+" Autocompletion for commands
+set wildmenu
+set wildmode=longest:full,full
+
+" Set the command window height to 2 lines to avoid 'press <enter> to continue'
+set cmdheight=2
+
+
+
+""""""""""""""""""""
+" Editor
+""""""""""""""""""""
+
+" Use modern character encoding
+set encoding=utf-8
+
+
+
+""""""""""""""""""""
+" Line Numbering
+""""""""""""""""""""
+
+" Show line numbers
+set number
+
+" Use relative line numbering
+set relativenumber
+
+
+
+""""""""""""""""""""
+" Indents 
+""""""""""""""""""""
+
+" Replace tabs with spaces
+set expandtab
+
+" Tab size
+set tabstop=4
+set shiftwidth=4
+
+" Backspace deletes whole tab instead of single spaces
+set smarttab
+
+" Automatically copy indentation from the line above
+set autoindent
+
+" Auto-indenting based on file type
+filetype indent plugin on
+
+
+
+""""""""""""""""""""
+" Search 
+""""""""""""""""""""
+
+" Case-insensitive search for lower-case searches
+set ignorecase
+set smartcase
+
+" Enable searching as you type, rather than waiting till you press enter
+set incsearch
+
+" Highlight search results
+set hlsearch
+
+
+
+""""""""""""""""""""
+" Key Bindings
+""""""""""""""""""""
+
+" Leader key
+let mapleader=","
+
+" Toggle 'paste mode' for pasting with right-mouse click
+set pastetoggle=<F2>
+
+" Remap ; to : in normal mode
+nnoremap ; :
+
+" Use kj to quickly exit insert mode
+inoremap kj <esc>
+
+" Don't step over wrapped lines
+nmap j gj
+nmap k gk
+
+" Easy window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Leader shortcut for clearing highlighted search
+nmap <silent> <leader>/ :nohlsearch<CR>
+
+" Leader shortcut for editing the vimrc file
+nmap <silent> <leader>ev :e $HOME/.vim/vimrc<CR>
+nmap <silent> <leader>sv :so $HOME/.vim/vimrc<CR>
+
+" Unbind some useless/annoying default key bindings
+nmap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
+
+" Remap arrow keys for avoiding bad habbits
+nnoremap <Left>  :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up>    :echoe "Use k"<CR>
+nnoremap <Down>  :echoe "Use j"<CR>
+inoremap <Left>  <ESC>:echoe "Use h"<CR>
+inoremap <Right> <ESC>:echoe "Use l"<CR>
+inoremap <Up>    <ESC>:echoe "Use k"<CR>
+inoremap <Down>  <ESC>:echoe "Use j"<CR>
+
+
+
+""""""""""""""""""""
+" Plugins
+""""""""""""""""""""
+
+call plug#begin('$HOME/.vim/plugged')
+
+" List plugins here
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'shime/vim-livedown'
+Plug 'tpope/vim-surround'
+Plug 'ctrlpvim/ctrlp.vim'
+
+call plug#end()
+
+
+
+""""""""""""""""""""
+" vim-airline
+""""""""""""""""""""
+
+let g:airline_solarized_bg='dark'
