@@ -85,3 +85,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# Load custom bash prompt
+source ./.bash_prompt
