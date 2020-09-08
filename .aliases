@@ -1,6 +1,9 @@
 #!/bin/bash
 # vim: filetype=sh
 
+# This is needed for sudo-ing alias commands
+alias sudo='sudo '
+
 # Easier navigation
 alias ..='cd ..'
 alias ...='cd ../..'
