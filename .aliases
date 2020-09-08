@@ -23,6 +23,10 @@ alias g='git'
 alias st='git status'
 alias com='git commit -m'
 
+# Apt
+alias apti='sudo apt install'
+alias aptr='sudo apt remove'
+
 # Print each PATH entry on a different line
 alias path='echo -e ${PATH//:/\\n}'
 
