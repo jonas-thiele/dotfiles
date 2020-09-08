@@ -79,7 +79,7 @@ prompt_git() {
 		fi;
 	fi;
 
-	[ -n "${s}" ] && s="[${s}]";
+	[ -n "${s}" ] && s="${s}";
 
 	echo -e "${1}${branchName}${2} ${s}";
 }
