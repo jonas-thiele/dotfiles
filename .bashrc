@@ -1,11 +1,11 @@
 # Extend the $PATH here
-source ./.path
+source ~/.path
 
 # For aliases
-source ./.aliases
+source ~/.aliases
 
 # For exporting environment variables
-source ./.exports
+source ~/.exports
 
 
 # append to the history file, don't overwrite it
@@ -87,4 +87,4 @@ if ! shopt -oq posix; then
 fi
 
 # Load custom bash prompt
-source ./.bash_prompt
+source ~/.bash_prompt
