@@ -57,6 +57,10 @@ prompt_git() {
 	if grep -q 'chromium/src.git' <<< "${repoUrl}"; then
 		s+='*';
 	else
+        # Check for unpushed commits.
+        if [[ $(git log --branches --not --remotes) ]]; then
+            s+='';
+        fi;
 		# Check for uncommitted changes in the index.
 		if ! $(git diff --quiet --ignore-submodules --cached); then
 			s+='';
