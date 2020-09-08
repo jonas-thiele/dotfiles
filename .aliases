@@ -22,6 +22,7 @@ alias l='ls -lFh'
 alias g='git'
 alias st='git status'
 alias com='git commit -m'
+alias coma='git add -A && git commit -m'
 
 # Apt
 alias apti='sudo apt install'
