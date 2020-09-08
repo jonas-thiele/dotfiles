@@ -13,3 +13,9 @@ export HISTFILESIZE=65536
 
 # Prefer US english with utf8
 export LANG='en_US.UTF-8'
+
+# Do not clear screen when closing manpages
+export MANPAGER='less -X'
+
+# Highlight section titles in manpages
+export LESS_TERMCAP_md="${yellow}"
