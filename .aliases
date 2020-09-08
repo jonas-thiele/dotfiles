@@ -15,8 +15,8 @@ alias ~='cd ~'
 alias q='exit'
 alias c='clear'
 alias h='history'
-alias ll='ls -alFh'
-alias l='ls -lFh'
+alias ll='ls -Alh'
+alias l='ls -A'
 
 # Git
 alias g='git'
