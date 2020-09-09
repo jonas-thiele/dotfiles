@@ -7,6 +7,8 @@ source ~/.aliases
 # For exporting environment variables
 source ~/.exports
 
+# For shell functions
+source ~/.functions
 
 # append to the history file, don't overwrite it
 shopt -s histappend

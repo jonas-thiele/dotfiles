@@ -1,0 +1,7 @@
+#!/bin/bash
+# vim: filetype=sh
+
+# Create new directory and enter it
+function mkd() {
+    mkdir -p "$@" && cd "$_"
+}
