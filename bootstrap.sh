@@ -4,7 +4,10 @@ find_dotfiles() {
     find -H "$HOME/dotfiles/" -name '*.sync'
 }
 
-sync () {
+# Creates a symlink of form '.<name>' in the home directory for each file 
+# '<name>.sync'.
+sync() {
+    echo "Creating symlinks for dotfiles"
     for file in $(find_dotfiles); do
         destination="$HOME/.$(basename "$file" '.sync')"
         if [ -e "$destination" ]; then
@@ -16,8 +19,51 @@ sync () {
     done
 }
 
-echo "Pulling dotfiles repository"
-git -C "$HOME/dotfiles/" pull origin master
+# Removes all files and folders that would be in the way of symlinks created
+# by sync.
+clean() {
+    echo "Cleaning home directory for synchronization"
+    for file in $(find_dotfiles); do
+        destination="$HOME/.$(basename "$file" '.sync')"
+        echo "    Delete $destination"
+        rm -rf $destination
+    done
+}
 
-echo "Creating symlinks for dotfiles"
-sync
+# Backups all files and folders in the home directory that would be replaced 
+# by dotfiles.
+backup() {
+    echo "Creating backup of existing dotfiles in home directory"
+    echo "Creating backup directory ~/dotfiles.bck"
+    mkdir -p $HOME/dotfiles.bck
+
+    for file in $(find_dotfiles); do
+        target_name=".$(basename "$file" '.sync')"
+        if [ -f "$HOME/$target_name" ]; then
+            echo "    Copying $HOME/$target_name to $HOME/dotfiles.bck/$target_name"
+            cp -R $HOME/$target_name $HOME/dotfiles.bck/$target_name
+        fi
+    done
+}
+
+
+case "$1" in
+    backup)
+        backup
+        ;;
+    clean)
+        clean
+        ;;
+    sync)
+        sync
+        ;;
+    all)
+        backup
+        clean
+        sync
+        ;;
+    *)
+        echo -e $"\nUsage: $(basename "$0") {backup|clean|sync|all}\n"
+        exit 1
+        ;;
+esac
