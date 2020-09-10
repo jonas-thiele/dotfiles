@@ -46,8 +46,8 @@ set autoread
 """"""""""""""""""""
 
 " Color scheme
-set background=dark
-colorscheme solarized
+"set background=dark
+"colorscheme solarized
 
 " Turn on syntax highlighting
 syntax on
@@ -185,11 +185,13 @@ inoremap <Down>  <ESC>:echoe "Use j"<CR>
 call plug#begin('$HOME/.vim/plugged')
 
 " List plugins here
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'shime/vim-livedown'
 Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
@@ -199,4 +201,15 @@ call plug#end()
 " vim-airline
 """"""""""""""""""""
 
-let g:airline_solarized_bg='dark'
+" let g:airline_solarized_bg='dark'
+colorscheme nord
+
+
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }
+
+set noshowmode
+

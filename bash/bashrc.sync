@@ -88,5 +88,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Load nord-dircolors for ls, tree,...
+test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
+
 # Load custom bash prompt
-source ~/.bash_prompt
+# ksource ~/.bash_prompt

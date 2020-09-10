@@ -25,8 +25,10 @@ clean() {
     echo "Cleaning home directory for synchronization"
     for file in $(find_dotfiles); do
         destination="$HOME/.$(basename "$file" '.sync')"
-        echo "    Delete $destination"
-        rm -rf $destination
+        if [ -e "$destination" ]; then
+            echo "    Delete $destination"
+            rm -rf $destination
+        fi
     done
 }
 
@@ -39,7 +41,7 @@ backup() {
 
     for file in $(find_dotfiles); do
         target_name=".$(basename "$file" '.sync')"
-        if [ -f "$HOME/$target_name" ]; then
+        if [ -e "$HOME/$target_name" ]; then
             echo "    Copying $HOME/$target_name to $HOME/dotfiles.bck/$target_name"
             cp -R $HOME/$target_name $HOME/dotfiles.bck/$target_name
         fi

@@ -1,0 +1,23 @@
+# tmux display things in 256 colors
+set -g default-terminal "tmux-256color"
+set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'k
+
+set-option -g default-shell "/bin/bash"
+
+##########################
+# Key Bindings 
+##########################
+
+# Remap tmux prefix from 'Ctrl-b' to 'Ctrl-a'
+unbind C-b
+set-option -g prefix C-a
+bind-key C-a send-prefix
+
+
+
+
+##########################
+# Look and Feel
+##########################
+
+source ~/dotfiles/tmux/base16.sh
