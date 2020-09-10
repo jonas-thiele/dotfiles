@@ -48,6 +48,10 @@ backup() {
     done
 }
 
+# Clones and installs all third party tools required by the dotfiles.
+install-tools() {
+    echo "Installing third-party tools that are required for dotfiles"
+}
 
 case "$1" in
     backup)
@@ -56,16 +60,20 @@ case "$1" in
     clean)
         clean
         ;;
+    install-tools)
+        install-tools
+        ;;
     sync)
         sync
         ;;
     all)
         backup
         clean
+        install-tools
         sync
         ;;
     *)
-        echo -e $"\nUsage: $(basename "$0") {backup|clean|sync|all}\n"
+        echo -e $"\nUsage: $(basename "$0") {backup|clean|install-tools|sync|all}\n"
         exit 1
         ;;
 esac
