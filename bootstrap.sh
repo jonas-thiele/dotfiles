@@ -51,6 +51,10 @@ backup() {
 # Clones and installs all third party tools required by the dotfiles.
 install-tools() {
     echo "Installing third-party tools that are required for dotfiles"
+
+    # TPM tmux plugin manager
+    echo "Installing TPM (tmux plugin manager)"
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 
 case "$1" in
