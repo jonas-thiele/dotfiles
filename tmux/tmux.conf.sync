@@ -1,8 +1,28 @@
-# tmux display things in 256 colors
+##########################
+# General Settings 
+##########################
+
+# Set the shell to use
+set-option -g default-shell "/bin/bash"
+
+# Tmux display things in 256 colors
 set -g default-terminal "tmux-256color"
 set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'k
 
-set-option -g default-shell "/bin/bash"
+# Fix mode switching delay in vim
+set -s escape-time 0
+
+# Increase scrollback buffer
+set -g history-limit 50000
+
+# Display tmux messages for 4 seconds
+set -g display-time 4000
+
+# Refresh status bar every 5 seconds
+set -g status-interval 5
+
+
+
 
 ##########################
 # Key Bindings 
@@ -15,9 +35,18 @@ bind-key C-a send-prefix
 
 
 
-
 ##########################
-# Look and Feel
+# Plugins 
 ##########################
 
-source ~/dotfiles/tmux/base16.sh
+# TPM Plugin Manager
+set -g @plugin 'tmux-plugins/tpm'
+
+# Restore sessions after restart
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+
+# Nord scheme
+set -g @plugin 'arcticicestudio/nord-tmux'
+
+# Initialize plugin manager (needs to be at the very bottom!)
+run '~/.tmux/plugins/tpm/tpm'
