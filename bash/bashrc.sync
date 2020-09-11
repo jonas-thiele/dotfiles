@@ -92,4 +92,9 @@ fi
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 
 # Load custom bash prompt
-# ksource ~/.bash_prompt
+# source ~/.bash_prompt
+
+# Autostart tmux
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
