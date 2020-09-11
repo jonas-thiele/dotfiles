@@ -21,6 +21,9 @@ set -g display-time 4000
 # Refresh status bar every 5 seconds
 set -g status-interval 5
 
+# Enable mouse mode
+set -g mouse on
+
 
 
 
@@ -32,6 +35,15 @@ set -g status-interval 5
 unbind C-b
 set-option -g prefix C-a
 bind-key C-a send-prefix
+
+# Split panes using | and -
+unbind '"'
+unbind %
+bind | split-window -h
+bind - split-window -v
+
+# Reload config file using prefix r
+bind r source-file ~/.tmux.conf
 
 
 
