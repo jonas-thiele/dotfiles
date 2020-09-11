@@ -191,13 +191,12 @@ inoremap <Down>  <ESC>:echoe "Use j"<CR>
 call plug#begin('$HOME/.vim/plugged')
 
 " List plugins here
-" Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/lightline.vim'
 Plug 'shime/vim-livedown'
 Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
