@@ -39,6 +39,12 @@ set confirm
 " Automatically reload modified files
 set autoread
 
+" Timout length for mapping delay
+set timeoutlen=1000
+            
+" Timeout length for key code delays
+set ttimeoutlen=0
+
 
 
 """"""""""""""""""""
