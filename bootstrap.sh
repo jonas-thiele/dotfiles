@@ -56,6 +56,12 @@ install-plugins() {
     echo "Installing TPM (tmux plugin manager)"
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+    echo "Installing tmux plugins"
+    tmux start-server
+    tmux new-session -d
+    ~/.tmux/plugins/tpm
+    tmux kill-server
+
     echo "Installing vim-plug (vim plugins manager)"
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
             https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
