@@ -59,7 +59,7 @@ install-plugins() {
     echo "Installing tmux plugins"
     tmux start-server
     tmux new-session -d
-    ~/.tmux/plugins/tpm
+    ~/.tmux/plugins/tpm/scripts/install_plugins.sh
     tmux kill-server
 
     echo "Installing vim-plug (vim plugins manager)"
