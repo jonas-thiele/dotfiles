@@ -97,7 +97,8 @@ setup-terminal-gnome() {
     mkdir -p ~/dotfiles/tmp
     git clone https://github.com/arcticicestudio/nord-gnome-terminal.git \
         ~/dotfiles/tmp
-    ~/dotfiles/tmp/nord-gnome-terminal/src/nord.sh  
+    ~/dotfiles/tmp/src/nord.sh  
+    rm -rf ~/dotfiles/tmp
 
     echo "Installing JetBrainsMono font"
     mkdir -p ~/.fonts
