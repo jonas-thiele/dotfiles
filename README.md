@@ -36,6 +36,9 @@ wget https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrains
 fc-cache -f -v
 ```
 
+Select the font in the profile settings of your terminal emulator and you are 
+good to go.
+
 ## Installation
 
 Install git and clone this repository to `~/dotfiles/`:
