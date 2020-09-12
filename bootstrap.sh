@@ -57,6 +57,7 @@ install-tools() {
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 
+
 case "$1" in
     backup)
         backup
@@ -73,8 +74,8 @@ case "$1" in
     all)
         backup
         clean
-        install-tools
         sync
+        install-tools
         ;;
     *)
         echo -e $"\nUsage: $(basename "$0") {backup|clean|install-tools|sync|all}\n"
