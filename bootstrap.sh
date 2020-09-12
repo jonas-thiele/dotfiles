@@ -49,12 +49,27 @@ backup() {
 }
 
 # Clones and installs all third party tools required by the dotfiles.
-install-tools() {
+install-plugins() {
     echo "Installing third-party tools that are required for dotfiles"
 
     # TPM tmux plugin manager
     echo "Installing TPM (tmux plugin manager)"
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+    echo "Installing vim-plug (vim plugins manager)"
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+    echo "Installing vim plugins"
+    vim +PlugInstall +qall
+}
+
+# Installs important packages that are needed for a basic shell setup
+install-packages() {
+    echo "Installing packages"
+    apt install vim
+    apt install tmux
+    apt install uuid
 }
 
 
@@ -65,20 +80,20 @@ case "$1" in
     clean)
         clean
         ;;
-    install-tools)
-        install-tools
-        ;;
     sync)
         sync
+        ;;
+    install-plugins)
+        install-tools
         ;;
     all)
         backup
         clean
         sync
-        install-tools
+        install-plugins
         ;;
     *)
-        echo -e $"\nUsage: $(basename "$0") {backup|clean|install-tools|sync|all}\n"
+        echo -e $"\nUsage: $(basename "$0") {install-tools|backup|clean|sync|install-plugins|all}\n"
         exit 1
         ;;
 esac
