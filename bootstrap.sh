@@ -102,8 +102,8 @@ setup-terminal-gnome() {
 
     echo "Installing JetBrainsMono font"
     mkdir -p ~/.fonts
-    wget -O '~/.fonts/JetBrains Mono Regular Nerd Font Complete Mono.ttf' \
-        https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono.ttf?raw=true
+    wget -P ~/.fonts/ \
+        https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete.ttf
     fc-cache -f -v
 
     echo "You need to manually set the Nord profile as default and select the font"
