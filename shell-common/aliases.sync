@@ -37,3 +37,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # Copies content of a file into clipboard (only works in x11 environments)
 alias ccp='xclip -sel c <'
+
+# Displays all colors the terminal is capable of
+alias colortest='curl -s https://gist.githubusercontent.com/HaleTom/89ffe32783f89f403bba96bd7bcd1263/raw/ | bash'

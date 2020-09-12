@@ -10,6 +10,14 @@ source ~/.exports
 # For shell functions
 source ~/.functions
 
+
+# Don't put duplicate lines or lines starting with space in the history.
+export HISTCONTROL=ignoreboth
+
+# Increase bash history size
+export HISTSIZE=65536
+export HISTFILESIZE=65536
+
 # append to the history file, don't overwrite it
 shopt -s histappend
 

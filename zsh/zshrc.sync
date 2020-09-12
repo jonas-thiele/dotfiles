@@ -1,0 +1,31 @@
+# Extend the $PATH here
+source ~/.path
+
+# For aliases
+source ~/.aliases
+
+# For exporting environment variables
+source ~/.exports
+
+# For shell functions
+source ~/.functions
+
+
+
+
+
+
+
+
+# Load nord-dircolors for ls, tree,...
+test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
+# Enable color support of ls and similar commands
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Autostart tmux
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
