@@ -66,16 +66,11 @@ install-plugins() {
 
 # Installs important packages that are needed for a basic shell setup
 install-packages() {
-    if [ `whoami` != root ]; then
-        echo Please run this script as root or using sudo
-        exit
-    fi
-
     echo "Installing packages"
-    apt -y install vim
-    apt -y install tmux
-    apt -y install uuid
-    apt -y install curl
+    sudo apt -y install vim
+    sudo apt -y install tmux
+    sudo apt -y install uuid
+    sudo apt -y install curl
 }
 
 
