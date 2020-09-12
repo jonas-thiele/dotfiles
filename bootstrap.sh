@@ -85,6 +85,7 @@ install-packages() {
 
     sudo apt -y install vim
     sudo apt -y install tmux
+    sudo apt -y install zsh
     sudo apt -y install uuid
     sudo apt -y install curl
 }
@@ -121,7 +122,7 @@ case "$1" in
         sync
         ;;
     install-plugins)
-        install-tools
+        install-plugins
         ;;
     setup-terminal-gnome)
         setup-terminal-gnome
