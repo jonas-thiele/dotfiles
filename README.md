@@ -1,44 +1,5 @@
 # My Dotfiles
 
-This repo contains all my dotfiles and tools that help setting up my preferred
-working environment.
-
-
-## Prerequisites
-
-### Terminal Emulator
-
-It is important to configure the terminal emulator of choice to use the correct
-color palette. Otherwise the themes defined in the dotfiles will not look as
-intended.
-
-#### gnome-terminal
-
-First, we need to install the nord profile for 
-[gnome-terminal](https://github.com/arcticicestudio/nord-gnome-terminal):
-
-``` bash
-git clone https://github.com/arcticicestudio/nord-gnome-terminal.git
-./nord-gnome-terminal/src/nord.sh
-```
-
-Set `nord` as the default profile in the terminal preferences.
-
-Next, install a patched mono font from 
-[nerd-fonts](https://github.com/ryanoasis/nerd-fonts). For example 
-`JetBrainsMono`:
-
-``` bash
-cd ~
-mkdir .fonts
-cd .fonts
-wget https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono.ttf?raw=true
-fc-cache -f -v
-```
-
-Select the font in the profile settings of your terminal emulator and you are 
-good to go.
-
 ## Installation
 
 Install git and clone this repository to `~/dotfiles/`:
@@ -46,4 +7,34 @@ Install git and clone this repository to `~/dotfiles/`:
 ``` bash
 sudo apt install git
 git clone https://github.com/jonas-thiele/dotfiles.git
+cd ~/dotfiles
 ```
+
+### Terminal settings
+
+First, you need to configure your terminal emulator to use the correct color
+and font settings. I use the nord theme with the JetBrainsMono font patched
+nerd-font symbols.
+
+#### gnome-terminal
+
+Simply run `./bootstrap.sh setup-terminal-gnome` to install the theme and font.
+To apply the settings you have to manually set *Nord* as the default profile.
+Then you need to enable *Custom font* in the *Test* tab of the preferences
+window and select *JetBrainsMono Nerd Font Mono Regular*.
+
+
+### Installing dotfiles, packages, and plugins
+
+The command `./bootstrap.sh all` does the following:
+
+1. Install some basic packages (like vim and tmux). You will be asked to type
+in your password
+2. Backup all the existing dotfiles in the home directory that will be 
+overwritten with symlinks in step 3
+3. Delete all of these existing dotfiles
+4. Create symlinks to the new dotfiles.
+5. Installs plugin managers for vim and tmux and runs them to install the plugins
+referenced in the dotfiles
+
+Restart your terminal and you should be good to go.
