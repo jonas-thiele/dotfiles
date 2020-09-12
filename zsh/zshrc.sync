@@ -12,8 +12,28 @@ source ~/.functions
 
 
 
+####################
+# History
+####################
 
+# Location of history file
+HISTFILE=~/.zsh_history
 
+# Increase history size
+HISTSIZE=65536
+SAVEHIST=65536
+
+# Also record timestamps
+setopt extended_history
+
+# Ignore commands that start with a space
+setopt hist_ignore_space
+
+# Ignore commands that are duplicates of the previous one
+setopt hist_ignore_dups
+
+# Synchronize history file across multiple shell instances
+setopt share_history
 
 
 
