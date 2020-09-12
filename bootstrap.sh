@@ -87,6 +87,7 @@ case "$1" in
         install-tools
         ;;
     all)
+        install-packages
         backup
         clean
         sync
