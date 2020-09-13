@@ -112,6 +112,9 @@ setup-terminal-gnome() {
       
 
 case "$1" in
+    install-packages)
+        install-packages
+        ;;
     backup)
         backup
         ;;
@@ -135,7 +138,7 @@ case "$1" in
         install-plugins
         ;;
     *)
-        echo -e $"\nUsage: $(basename "$0") {install-tools|backup|clean|sync|install-plugins|setup-terminal-gnome|all}\n"
+        echo -e $"\nUsage: $(basename "$0") {install-packagaes|backup|clean|sync|install-plugins|setup-terminal-gnome|all}\n"
         exit 1
         ;;
 esac
