@@ -21,7 +21,8 @@ set hidden
 set noerrorbells visualbell t_vb=
 
 " Enable mouse support
-set mouse+=a
+set ttymouse=xterm2
+set mouse=a
 
 " Remember more things
 set history=1000
