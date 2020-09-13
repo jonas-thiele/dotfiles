@@ -83,6 +83,10 @@ install-plugins() {
 install-packages() {
     header "Installing packages"
 
+    sudo apt -y update
+    sudo apt -y upgrade
+    sudo apt -y dist-upgrade
+
     sudo apt -y install vim
     sudo apt -y install tmux
     sudo apt -y install zsh
