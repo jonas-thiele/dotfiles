@@ -18,11 +18,34 @@ alias h='history'
 alias ll='ls -Alh'
 alias l='ls -A'
 
+####################
 # Git
+####################
+
+# General tools
 alias g='git'
-alias st='git status'
-alias com='git commit -m'
-alias coma='git add -A && git commit -m'
+alias gs='git status'
+alias gl='git log'
+alias glf='git log -p'   
+alias gls='git log --oneline'
+alias gd='git diff'
+
+# Snapshotting
+alias ga='git add'
+alias gaa='git add -A'
+alias gc='git commit -m'
+alias gca='git commit --amend'
+alias gce='git add -A && git commit -m'
+
+# Remote
+alias gp='git push'
+alias gu='git pull'
+
+# Branching
+alias gb='git branch'
+alias gco='git checkout'
+
+
 
 # Apt
 alias apti='sudo apt install'
