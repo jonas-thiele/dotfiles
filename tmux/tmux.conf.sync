@@ -56,8 +56,10 @@ bind-key C-a send-prefix
 # Split panes using | and -
 unbind '"'
 unbind %
-bind | split-window -h
-bind - split-window -v
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v "#{pane_current_path}"
+
+bind c new-window -c "#{pane_current_path}"
 
 # Reload config file using prefix r
 bind r source-file ~/.tmux.conf
