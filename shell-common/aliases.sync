@@ -18,6 +18,8 @@ alias h='history'
 alias ll='ls -Alh'
 alias l='ls -A'
 
+
+
 ####################
 # Git
 ####################
@@ -44,6 +46,15 @@ alias gu='git pull'
 # Branching
 alias gb='git branch'
 alias gco='git checkout'
+
+
+
+####################
+# Kubernetes
+####################
+
+alias k='kubectl'
+complete -F __start_kubectl k
 
 
 

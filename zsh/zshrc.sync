@@ -37,6 +37,11 @@ setopt share_history
 
 
 
+# Kubectl autocomplete
+source <(kubectl completion bash) 
+
+
+
 # Load nord-dircolors for ls, tree,...
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 # Enable color support of ls and similar commands
