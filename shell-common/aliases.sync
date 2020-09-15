@@ -49,15 +49,6 @@ alias gco='git checkout'
 
 
 
-####################
-# Kubernetes
-####################
-
-alias k='kubectl'
-complete -F __start_kubectl k
-
-
-
 # Apt
 alias apti='sudo apt install'
 alias aptr='sudo apt remove'

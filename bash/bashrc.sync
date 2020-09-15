@@ -29,10 +29,6 @@ shopt -s checkwinsize
 shopt -s nocaseglob
 
 
-# Kubectl autocomplete
-source <(kubectl completion bash) 
-
-
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -104,8 +100,11 @@ fi
 # Load nord-dircolors for ls, tree,...
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 
-# Load custom bash prompt
-# source ~/.bash_prompt
+
+# Use this file to include anything that you do not want to share in the dotfiles repo.
+# E.g. private credentials or configurations that are specific to your local installation.
+test -e ~/.slocal && source ~/.slocal
+
 
 # Autostart tmux
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
