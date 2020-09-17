@@ -107,8 +107,8 @@ set relativenumber
 set expandtab
 
 " Tab size
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 
 " Backspace deletes whole tab instead of single spaces
 set smarttab
