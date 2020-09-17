@@ -3,3 +3,5 @@
 	name = Jonas Thiele
 [core]
 	excludesfile = ~/.gitignore_global
+[pull]
+	rebase = true
