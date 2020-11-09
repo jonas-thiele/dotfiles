@@ -104,9 +104,3 @@ test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 # Use this file to include anything that you do not want to share in the dotfiles repo.
 # E.g. private credentials or configurations that are specific to your local installation.
 test -e ~/.slocal && source ~/.slocal
-
-
-# Autostart tmux
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
-fi
