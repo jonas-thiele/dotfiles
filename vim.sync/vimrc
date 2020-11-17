@@ -150,9 +150,6 @@ set pastetoggle=<F2>
 " Remap ; to : in normal mode
 nnoremap ; :
 
-" Use kj to quickly exit insert mode
-inoremap kj <esc>
-
 " Don't step over wrapped lines
 nmap j gj
 nmap k gk
