@@ -66,10 +66,6 @@ set undodir=/tmp//
 " Turn on syntax highlighting
 syntax on
 
-" Highlight the 81st column
-highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 100)
-
 
 
 """"""""""""""""""""
