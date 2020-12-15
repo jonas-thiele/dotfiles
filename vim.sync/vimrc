@@ -200,6 +200,8 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'lervag/vimtex'
 Plug 'takac/vim-hardtime'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 call plug#end()
 
@@ -228,3 +230,11 @@ set noshowmode
 let g:vimtex_quickfix_enabled = 0
 let g:tex_fast = "bMpr"
 let g:tex_conceal = ""
+
+"""""""""""""""""""
+" Snippets
+"""""""""""""""""""
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
