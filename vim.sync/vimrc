@@ -199,6 +199,7 @@ Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'lervag/vimtex'
 
 call plug#end()
 
@@ -220,3 +221,10 @@ let g:lightline = {
 
 set noshowmode
 
+"""""""""""""""""""
+" vimtex
+"""""""""""""""""""
+
+let g:vimtex_quickfix_enabled = 0
+let g:tex_fast = "bMpr"
+let g:tex_conceal = ""
