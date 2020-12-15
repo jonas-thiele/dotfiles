@@ -14,6 +14,9 @@ set laststatus=2
 " Makes backspace more intuitive in insertion mode
 set backspace=indent,eol,start
 
+" Enable linebreak
+set linebreak
+
 " Allow hidden buffers that are not shown in a window
 set hidden
 
