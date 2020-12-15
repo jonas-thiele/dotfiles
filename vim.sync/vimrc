@@ -46,6 +46,10 @@ set timeoutlen=1000
 " Timeout length for key code delays
 set ttimeoutlen=0
 
+" Store swap and backup files under /tmp
+set backupdir=/tmp//
+set directory=/tmp//
+set undodir=/tmp//
 
 
 """"""""""""""""""""
