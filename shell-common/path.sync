@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 # vim: filetype=sh
 
-# Add ~/bin to $PATH
-export PATH="$PATH:$HOME/bin"
 
