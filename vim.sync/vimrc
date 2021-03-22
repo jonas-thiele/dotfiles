@@ -214,7 +214,6 @@ call plug#end()
 " let g:airline_solarized_bg='dark'
 silent! colorscheme nord
 
-
 let g:lightline = {
       \ 'colorscheme': 'nord',
       \ 'separator': { 'left': '', 'right': '' },
@@ -223,11 +222,13 @@ let g:lightline = {
 
 set noshowmode
 
+hi Search cterm=NONE ctermfg=grey ctermbg=DarkGrey
+
 """""""""""""""""""
 " vimtex
 """""""""""""""""""
 
-let g:vimtex_quickfix_enabled = 0
+"let g:vimtex_quickfix_enabled = 0
 let g:tex_fast = "bMpr"
 let g:tex_conceal = ""
 
