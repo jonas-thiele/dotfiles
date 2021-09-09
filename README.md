@@ -21,7 +21,8 @@ nerd-font symbols.
 Simply run `./bootstrap.sh setup-terminal-gnome` to install the theme and font.
 To apply the settings you have to manually set *Nord* as the default profile.
 Then you need to enable *Custom font* in the *Test* tab of the preferences
-window and select *JetBrainsMono Nerd Font Mono Regular*.
+window and select *JetBrainsMono Nerd Font Mono Regular*. If the font doesn't show 
+up, follow this guide: https://superuser.com/a/1549327.
 
 
 ### Installing dotfiles, packages, and plugins
